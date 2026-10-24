@@ -1,0 +1,66 @@
+ {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fa;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #0f4c81;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1.25rem;
+  background: #0f4c81;
+  color: #ffffff;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  color: #0f4c81;
+  margin-bottom: 0.5rem;
+}
+
+.contact {
+  margin-top: 3rem;
+}
+
+a {
+  color: #0f4c81;
+}
