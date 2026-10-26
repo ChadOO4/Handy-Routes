@@ -1,9 +1,9 @@
 :root {
-  --black: #050403;
-  --gold: #c9a15a;
-  --gold-light: #ecd098;
-  --ivory: #e9e1d0;
-  --muted: #a89d86;
+  --white: #FFFFFF;
+  --emerald-green: #50C878;
+  --green-light: #32CD32;
+  --mint-green: #98FF98;
+  --pale-green: #98FB98;
 }
 
 * {
@@ -18,8 +18,8 @@ html {
 
 body {
   font-family: Georgia, "Times New Roman", serif;
-  background: var(--black);
-  color: var(--ivory);
+  background: var(--white);
+  color: var(--mint-green);
   line-height: 1.7;
   overflow-x: hidden;
 }
@@ -86,9 +86,9 @@ body {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.6rem 1.75rem;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--emerald-green);
   border-radius: 999px;
-  color: var(--gold-light);
+  color: var(--green-light);
   font-size: 1.05rem;
   letter-spacing: 0.04em;
   animation: pulse 3.5s ease-in-out infinite;
@@ -153,7 +153,7 @@ body {
 
 .card h2 {
   position: relative;
-  color: var(--gold-light);
+  color: var(--green-light);
   font-size: 1.4rem;
   font-weight: normal;
   letter-spacing: 0.05em;
@@ -162,7 +162,7 @@ body {
 
 .card p {
   position: relative;
-  color: var(--muted);
+  color: var(--pale-green);
   max-width: 28ch;
   margin: 0 auto;
 }
@@ -184,15 +184,15 @@ body {
 
 .contact {
   margin-top: 3rem;
-  color: var(--muted);
+  color: var(--pale-green);
 }
 
 a {
-  color: var(--gold-light);
+  color: var(--green-light);
 }
 
 a:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--emerald-green);
   outline-offset: 3px;
 }
 
