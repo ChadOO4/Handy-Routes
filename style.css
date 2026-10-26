@@ -1,66 +1,105 @@
- {
+:root {
+  --black: #050403;
+  --gold: #c9a15a;
+  --gold-light: #ecd098;
+  --ivory: #e9e1d0;
+  --muted: #a89d86;
+}
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f4f7fa;
-  color: #1f2937;
-  line-height: 1.6;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--black);
+  color: var(--ivory);
+  line-height: 1.7;
 }
 
-.hero {
-  max-width: 900px;
+.page {
+  max-width: 960px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 2rem 1.5rem 4rem;
   text-align: center;
 }
 
-h1 {
-  font-size: 3rem;
-  color: #0f4c81;
-}
-
-.tagline {
-  font-size: 1.25rem;
-  margin-top: 0.5rem;
+/* The logo image has a dark background, so "screen" makes it blend into the page */
+.logo {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  margin: 0 auto;
+  mix-blend-mode: screen;
 }
 
 .status {
   display: inline-block;
   margin-top: 1.5rem;
-  padding: 0.5rem 1.25rem;
-  background: #0f4c81;
-  color: #ffffff;
+  padding: 0.6rem 1.75rem;
+  border: 1px solid var(--gold);
   border-radius: 999px;
-  font-weight: bold;
+  color: var(--gold-light);
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
 }
 
 .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 3.5rem;
 }
 
 .card {
-  background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+.card + .card {
+  border-left: 1px solid rgba(201, 161, 90, 0.35);
+}
+
+.card img {
+  display: block;
+  height: 84px;
+  width: auto;
+  margin: 0 auto 0.75rem;
+  mix-blend-mode: screen;
 }
 
 .card h2 {
-  color: #0f4c81;
+  color: var(--gold-light);
+  font-size: 1.4rem;
+  font-weight: normal;
+  letter-spacing: 0.05em;
   margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--muted);
+  max-width: 28ch;
+  margin: 0 auto;
 }
 
 .contact {
   margin-top: 3rem;
+  color: var(--muted);
 }
 
 a {
-  color: #0f4c81;
+  color: var(--gold-light);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .card + .card {
+    border-left: none;
+    border-top: 1px solid rgba(201, 161, 90, 0.35);
+  }
 }
