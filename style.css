@@ -12,21 +12,53 @@
   padding: 0;
 }
 
+html {
+  background: var(--black);
+}
+
 body {
   font-family: Georgia, "Times New Roman", serif;
   background: var(--black);
   color: var(--ivory);
   line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Background layers */
+#dust {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glow {
+  position: fixed;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(201, 161, 90, 0.14), transparent 40%),
+    radial-gradient(circle at 75% 70%, rgba(201, 161, 90, 0.10), transparent 45%);
+  animation: drift 24s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  to { transform: translate3d(4%, 3%, 0) scale(1.08); }
 }
 
 .page {
+  position: relative;
+  z-index: 1;
   max-width: 960px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
   text-align: center;
 }
 
-/* The logo image has a dark background, so "screen" makes it blend into the page */
+/* Logo: edges fade out so the image blends into the page */
 .logo {
   display: block;
   width: 100%;
@@ -34,6 +66,20 @@ body {
   height: auto;
   margin: 0 auto;
   mix-blend-mode: screen;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, #000 7%, #000 93%, transparent),
+    linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent, #000 7%, #000 93%, transparent),
+    linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent);
+  mask-composite: intersect;
+  animation: breathe 7s ease-in-out infinite alternate;
+}
+
+@keyframes breathe {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.2); }
 }
 
 .status {
@@ -45,20 +91,51 @@ body {
   color: var(--gold-light);
   font-size: 1.05rem;
   letter-spacing: 0.04em;
+  animation: pulse 3.5s ease-in-out infinite;
 }
 
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(201, 161, 90, 0); }
+  50% { box-shadow: 0 0 22px rgba(201, 161, 90, 0.35); }
+}
+
+/* Service tiles */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
   margin-top: 3.5rem;
 }
 
 .card {
-  padding: 1rem 1.5rem 1.5rem;
+  position: relative;
+  padding: 1.75rem 1.5rem 2rem;
+  border: 1px solid rgba(201, 161, 90, 0.3);
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(201, 161, 90, 0.08), rgba(201, 161, 90, 0.01));
+  overflow: hidden;
+  will-change: transform;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
-.card + .card {
-  border-left: 1px solid rgba(201, 161, 90, 0.35);
+/* Soft spotlight that follows the cursor */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(236, 208, 152, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.card:hover {
+  border-color: rgba(236, 208, 152, 0.75);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6), 0 0 28px rgba(201, 161, 90, 0.18);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card img {
@@ -67,9 +144,15 @@ body {
   width: auto;
   margin: 0 auto 0.75rem;
   mix-blend-mode: screen;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: translateY(-4px) scale(1.08);
 }
 
 .card h2 {
+  position: relative;
   color: var(--gold-light);
   font-size: 1.4rem;
   font-weight: normal;
@@ -78,9 +161,25 @@ body {
 }
 
 .card p {
+  position: relative;
   color: var(--muted);
   max-width: 28ch;
   margin: 0 auto;
+}
+
+/* Entrance: tiles rise one after another (only when JavaScript is running) */
+.js .card:not(.in) {
+  opacity: 0;
+}
+
+.card.in {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 160ms);
+}
+
+@keyframes rise {
+  from { opacity: 0; translate: 0 36px; }
+  to { opacity: 1; translate: 0 0; }
 }
 
 .contact {
@@ -97,9 +196,16 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-@media (max-width: 640px) {
-  .card + .card {
-    border-left: none;
-    border-top: 1px solid rgba(201, 161, 90, 0.35);
+@media (prefers-reduced-motion: reduce) {
+  .glow,
+  .logo,
+  .status {
+    animation: none;
+  }
+  .js .card:not(.in) {
+    opacity: 1;
+  }
+  .card.in {
+    animation: none;
   }
 }
