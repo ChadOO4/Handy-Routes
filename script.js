@@ -81,7 +81,7 @@
       }
       var twinkle = 0.6 + 0.4 * Math.sin(t / 900 + s.p);
       ctx.beginPath();
-      ctx.fillStyle = 'rgba(236, 208, 152, ' + (s.a * twinkle) + ')';
+      ctx.fillStyle = 'rgba(178, 211, 164, ' + (s.a * twinkle) + ')';
       ctx.arc(s.x, s.y, s.r, 0, 6.283);
       ctx.fill();
     });
