@@ -1,5 +1,6 @@
 :root {
   --white: #FFFFFF;
+  --black:#000000;
   --emerald-green: #50C878;
   --green-light: #32CD32;
   --mint-green: #98FF98;
@@ -162,7 +163,7 @@ body {
 
 .card p {
   position: relative;
-  color: var(--pale-green);
+  color: var(--black);
   max-width: 28ch;
   margin: 0 auto;
 }
