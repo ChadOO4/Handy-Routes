@@ -4,48 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Community | HandyRoutes Cambridge</title>
-  <meta name="description" content="HandyRoutes community work in Cambridge. Giving back to the neighbourhood we serve.">
-  <meta name="theme-color" content="#255255255">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="HandyRoutes community work: giving back from Cambridge to the world.">
+  <link rel="stylesheet" href="nav.css">
   <link rel="stylesheet" href="community.css">
 </head>
-<body>
-  <canvas id="dust" aria-hidden="true"></canvas>
-  <div class="glow" aria-hidden="true"></div>
+<body class="community">
 
   <nav class="nav" aria-label="Main">
     <a href="index.html">Home</a>
     <a href="community.html" aria-current="page">Community</a>
   </nav>
 
-  <main class="page">
-    <h1 class="page-title">Community</h1>
-    <p class="intro">
-      HandyRoutes is more than a service. We want to give back to the people and places around the world.
-    </p>
+  <main class="wrap">
 
-    <p class="status">Community work starting soon</p>
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-text">
+        <h1>Giving back, from Cambridge <span>to the world</span></h1>
+        <p class="tagline">Small jobs. Big impact.</p>
+        <p class="lead">
+          HandyRoutes wants to do more than clean, move and fix. We're building ways to support our neighbours, our city and causes far beyond it.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-solid" href="mailto:community@handyroutes.co.uk?subject=Getting%20involved">Get Involved &rarr;</a>
+          <a class="btn btn-outline" href="#causes">Learn More</a>
+        </div>
+      </div>
 
-    <!-- PLACEHOLDER content: edit these cards to match the community work you actually plan to do -->
-    <section class="services" aria-label="Our community work">
-      <div class="card">
-        <h2>Neighbourhood Clean-ups</h2>
-        <p>Helping keep local streets, parks and shared spaces tidy.</p>
+      <div class="globe-wrap" aria-hidden="true">
+        <div class="globe"></div>
+        <span class="pin">Cambridge</span>
       </div>
-    <div class="card">
-        <h2>Global Causes</h2>
-        <p>Supporting worldwide causes and charities that make a difference beyond Cambridge.</p>
+    </header>
+
+    <!-- Four causes strip -->
+    <section class="strip" id="causes" aria-label="Our community work">
+      <div class="strip-item">
+        <span class="badge" aria-hidden="true">🧹</span>
+        <div><h2>Neighbourhood<br>Clean-ups</h2></div>
       </div>
-      <div class="card">
-        <h2>Local Causes</h2>
-        <p>Supporting charities and community groups with our time and skills.</p>
+      <div class="strip-item">
+        <span class="badge" aria-hidden="true">🤝</span>
+        <div><h2>Helping<br>Neighbours</h2></div>
+      </div>
+      <div class="strip-item">
+        <span class="badge" aria-hidden="true">📍</span>
+        <div><h2>Local<br>Causes</h2></div>
+      </div>
+      <div class="strip-item">
+        <span class="badge" aria-hidden="true">🌍</span>
+        <div><h2>Global<br>Causes</h2></div>
       </div>
     </section>
 
-    <p class="contact">
-      Know a person or group we could help? <a href="mailto:handyroutes@gmail.com">handyroutes@gmail.com</a>
-    </p>
+    <!-- Bottom row -->
+    <section class="bottom">
+
+      <div class="panel panel-quote">
+        <p>Good work<br>starts close<br>to home.</p>
+      </div>
+
+      <div class="panel panel-involved">
+        <h2>Get Involved</h2>
+        <p>Choose how you want to help.</p>
+        <div class="pill-row">
+          <a class="pill" href="mailto:community@handyroutes.co.uk?subject=Volunteering">🌱 Volunteer</a>
+          <a class="pill" href="mailto:community@handyroutes.co.uk?subject=Supporting%20our%20causes">💚 Support</a>
+          <a class="pill" href="mailto:community@handyroutes.co.uk?subject=Spreading%20the%20word">📣 Spread the word</a>
+        </div>
+      </div>
+
+      <div class="panel panel-update">
+        <h2>Stay Updated</h2>
+        <p>Want news on our community work? Email us and we'll add you to the list.</p>
+        <a class="btn btn-light" href="mailto:community@handyroutes.co.uk?subject=Add%20me%20to%20updates">Join the list</a>
+      </div>
+
+    </section>
   </main>
-  <script src="script.js"></script>
+
+  <footer class="footer">
+    <p><strong>HandyRoutes</strong> &nbsp;|&nbsp; One name, every solution.</p>
+    <p><a href="mailto:community@handyroutes.co.uk">community@handyroutes.co.uk</a></p>
+  </footer>
+
 </body>
 </html>
