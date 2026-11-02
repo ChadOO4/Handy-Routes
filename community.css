@@ -1,0 +1,51 @@
+/* Navigation + community page styles. Load after style.css */
+
+.nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.25rem 1.5rem 0;
+}
+
+.nav a {
+  color: var(--emerald-green);
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.1rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  color: var(--green-light);
+  border-bottom-color: var(--green-light);
+}
+
+.nav a:focus-visible {
+  outline: 2px solid var(--emerald-green);
+  outline-offset: 4px;
+}
+
+.page-title {
+  color: var(--green-light);
+  font-size: 2.4rem;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  margin-top: 2rem;
+}
+
+.intro {
+  max-width: 52ch;
+  margin: 1rem auto 0;
+  color: var(--black);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 480px) {
+  .nav { gap: 1.25rem; }
+  .page-title { font-size: 1.9rem; }
+}
