@@ -1,0 +1,33 @@
+.nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.25rem 1.5rem 0;
+}
+
+.nav a {
+  color: #2e7d3f;
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.1rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  color: #1e5a2d;
+  border-bottom-color: #1e5a2d;
+}
+
+.nav a:focus-visible {
+  outline: 2px solid #2e7d3f;
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .nav { gap: 1.25rem; }
+}
