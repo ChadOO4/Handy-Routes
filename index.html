@@ -7,41 +7,109 @@
   <meta name="description" content="HandyRoutes offers cleaning, transportation and maintenance in Cambridge. One name, every solution. Coming soon.">
   <meta name="theme-color" content="#2e7d3f">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="nav.css">
 </head>
 <body>
   <canvas id="dust" aria-hidden="true"></canvas>
   <div class="glow" aria-hidden="true"></div>
 
-  <nav class="nav" aria-label="Main">
-    <a href="index.html" aria-current="page">Home</a>
-    <a href="community.html">Community</a>
-  </nav>
+  <!-- Decorative leaves -->
+  <svg class="leaf leaf-a" viewBox="0 0 120 160" aria-hidden="true">
+    <path d="M60 155 C5 110 10 40 60 5 C110 40 115 110 60 155Z" fill="currentColor"/>
+  </svg>
+  <svg class="leaf leaf-b" viewBox="0 0 120 160" aria-hidden="true">
+    <path d="M60 155 C5 110 10 40 60 5 C110 40 115 110 60 155Z" fill="currentColor"/>
+  </svg>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">HandyRoutes</a>
+    <nav class="links" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="#mission">Our Mission</a>
+      <a href="#services">Our Services</a>
+      <a href="community.html">Community</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-solid btn-small" href="mailto:handyroutes@gmail.com?subject=Quote%20request">Get a Quote &rarr;</a>
+  </header>
 
   <main class="page">
-    <img class="logo" src="images/logo.jpg" alt="HandyRoutes. Cleaning, transportation, maintenance. One name, every solution.">
 
-    <p class="status">Coming soon to Cambridge</p>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="status">Coming soon to Cambridge</p>
+        <h1>Stronger Business.<span>A Cleaner, Healthier Space.</span></h1>
+        <p class="lead">
+          Professional cleaning, reliable transportation, and essential maintenance services, all in one trusted partner.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-solid" href="mailto:handyroutes@gmail.com?subject=Quote%20request">Get a Quote &rarr;</a>
+          <a class="btn btn-outline" href="#services">Learn More</a>
+        </div>
+      </div>
 
-    <section class="services" aria-label="Our services">
-      <div class="card">
-        <img src="images/icon-cleaning.jpg" alt="">
-        <h2>Cleaning</h2>
-        <p>Deep cleans, end of tenancy, offices and after-builders cleanup.</p>
-      </div>
-      <div class="card">
-        <img src="images/icon-transport.jpg" alt="">
-        <h2>Transportation</h2>
-        <p>Moving, shifting and deliveries.</p>
-      </div>
-      <div class="card">
-        <img src="images/icon-maintenance.jpg" alt="">
-        <h2>Maintenance</h2>
-        <p>Small repairs, furniture assembly and odd jobs.</p>
+      <!-- To use a photo instead of the logo, replace the <img> below with:
+           <img class="photo" src="images/hero.jpg" alt="Describe the photo"> -->
+      <div class="hero-visual">
+        <img class="logo" src="images/logo.jpg" alt="HandyRoutes. Cleaning, transportation, maintenance. One name, every solution.">
       </div>
     </section>
 
-    <p class="contact">Get in touch: <a href="mailto:handyroutes@gmail.com">handyroutes@gmail.com</a></p>
+    <!-- Services -->
+    <section class="services" id="services" aria-label="Our services">
+      <div class="card">
+        <img src="images/icon-cleaning.jpg" alt="">
+        <div>
+          <h2>Cleaning</h2>
+          <p>Deep cleans, end of tenancy, offices and after-builders cleanup.</p>
+        </div>
+        <a class="go" href="mailto:handyroutes@gmail.com?subject=Cleaning%20quote" aria-label="Get a cleaning quote">&rarr;</a>
+      </div>
+      <div class="card">
+        <img src="images/icon-transport.jpg" alt="">
+        <div>
+          <h2>Transportation</h2>
+          <p>Moving, shifting and deliveries.</p>
+        </div>
+        <a class="go" href="mailto:handyroutes@gmail.com?subject=Transportation%20quote" aria-label="Get a transportation quote">&rarr;</a>
+      </div>
+      <div class="card">
+        <img src="images/icon-maintenance.jpg" alt="">
+        <div>
+          <h2>Maintenance</h2>
+          <p>Small repairs, furniture assembly and odd jobs.</p>
+        </div>
+        <a class="go" href="mailto:handyroutes@gmail.com?subject=Maintenance%20quote" aria-label="Get a maintenance quote">&rarr;</a>
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="why" id="mission" aria-label="Our mission">
+      <h2 class="why-title">🌿 Why HandyRoutes</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <span class="why-icon" aria-hidden="true">🤝</span>
+          <h3>One team</h3>
+          <p>Cleaning, moving and fixing under one name.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-icon" aria-hidden="true">📍</span>
+          <h3>Local</h3>
+          <p>Based in Cambridge.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-icon" aria-hidden="true">🌍</span>
+          <h3>Giving back</h3>
+          <p>Community work, from Cambridge to the world.</p>
+        </div>
+        <div class="why-cta">
+          <p class="why-line">A cleaner, healthier community.</p>
+          <a class="btn btn-solid" href="community.html">Our Mission &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <p class="contact" id="contact">Get in touch: <a href="mailto:handyroutes@gmail.com">handyroutes@gmail.com</a></p>
   </main>
   <script src="script.js"></script>
 </body>
