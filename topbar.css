@@ -1,0 +1,83 @@
+/* Shared top bar + page transition. Load this on every page. */
+@view-transition { navigation: auto; }
+
+.topbar,
+.topbar * { box-sizing: border-box; }
+
+.topbar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 0;
+  view-transition-name: topbar; /* keeps the bar steady while the page fades */
+}
+
+.topbar .brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: #1e5a2d;
+  text-decoration: none;
+}
+
+.topbar .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.6rem;
+}
+
+.topbar .links a {
+  padding: 0.3rem 0;
+  font-size: 0.97rem;
+  color: #12311b;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.topbar .links a:hover,
+.topbar .links a[aria-current="page"] {
+  color: #1e5a2d;
+  border-bottom-color: #1e5a2d;
+}
+
+.topbar .nav-cta {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: #1e5a2d;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.topbar .nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 90, 45, 0.3);
+}
+
+.topbar a:focus-visible {
+  outline: 2px solid #6fbf5a;
+  outline-offset: 3px;
+}
+
+@media (max-width: 820px) {
+  .topbar .links { order: 3; width: 100%; justify-content: center; }
+}
+
+/* Page fade */
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: 0.35s; }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) { animation: none !important; }
+}
