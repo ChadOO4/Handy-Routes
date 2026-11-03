@@ -6,87 +6,43 @@
   <title>HandyRoutes | Cleaning, Transportation and Maintenance in Cambridge</title>
   <meta name="description" content="HandyRoutes offers cleaning, transportation and maintenance in Cambridge. One name, every solution. Coming soon.">
   <meta name="theme-color" content="#2e7d3f">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="nav.css">
-  <link rel="stylesheet" href="home.css">
 </head>
-<body class="home">
+<body>
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <div class="glow" aria-hidden="true"></div>
 
   <nav class="nav" aria-label="Main">
     <a href="index.html" aria-current="page">Home</a>
     <a href="community.html">Community</a>
   </nav>
 
-  <main class="wrap">
+  <main class="page">
+    <img class="logo" src="images/logo.jpg" alt="HandyRoutes. Cleaning, transportation, maintenance. One name, every solution.">
 
-    <!-- Hero -->
-    <header class="hero">
-      <div class="hero-text">
-        <p class="status">Coming soon to Cambridge</p>
-        <h1>Cleaning, moving <span>and fixing, made simple</span></h1>
-        <p class="tagline">One name, every solution.</p>
-        <p class="lead">
-          HandyRoutes brings cleaning, transportation and maintenance together in one place, so you only need one number to call.
-        </p>
-        <div class="btn-row">
-          <a class="btn btn-solid" href="mailto:handyroutes@gmail.com?subject=Quote%20request">Get a Quote &rarr;</a>
-          <a class="btn btn-outline" href="#services">Our Services</a>
-        </div>
-      </div>
+    <p class="status">Coming soon to Cambridge</p>
 
-      <div class="logo-card">
-        <img class="logo" src="images/logo.jpg" alt="HandyRoutes. Cleaning, transportation, maintenance. One name, every solution.">
-      </div>
-    </header>
-
-    <!-- Services -->
-    <section class="services" id="services" aria-label="Our services">
-      <div class="card" style="--i:0">
-        <img class="icon" src="images/icon-cleaning.jpg" alt="">
+    <section class="services" aria-label="Our services">
+      <div class="card">
+        <img src="images/icon-cleaning.jpg" alt="">
         <h2>Cleaning</h2>
         <p>Deep cleans, end of tenancy, offices and after-builders cleanup.</p>
       </div>
-      <div class="card" style="--i:1">
-        <img class="icon" src="images/icon-transport.jpg" alt="">
+      <div class="card">
+        <img src="images/icon-transport.jpg" alt="">
         <h2>Transportation</h2>
         <p>Moving, shifting and deliveries.</p>
       </div>
-      <div class="card" style="--i:2">
-        <img class="icon" src="images/icon-maintenance.jpg" alt="">
+      <div class="card">
+        <img src="images/icon-maintenance.jpg" alt="">
         <h2>Maintenance</h2>
         <p>Small repairs, furniture assembly and odd jobs.</p>
       </div>
     </section>
 
-    <!-- Bottom row -->
-    <section class="bottom">
-
-      <div class="panel panel-quote">
-        <p>One name,<br>every<br>solution.</p>
-      </div>
-
-      <div class="panel panel-quoteform">
-        <h2>Get a Quote</h2>
-        <p>Choose what you need help with.</p>
-        <div class="pill-row">
-          <a class="pill" href="mailto:handyroutes@gmail.com?subject=Cleaning%20quote">🧹 Cleaning</a>
-          <a class="pill" href="mailto:handyroutes@gmail.com?subject=Transportation%20quote">🚚 Transport</a>
-          <a class="pill" href="mailto:handyroutes@gmail.com?subject=Maintenance%20quote">🔧 Maintenance</a>
-        </div>
-      </div>
-
-      <div class="panel panel-contact">
-        <h2>Get in Touch</h2>
-        <p>Questions or a job in mind? Send us an email.</p>
-        <a class="btn btn-solid" href="mailto:handyroutes@gmail.com">handyroutes@gmail.com</a>
-      </div>
-
-    </section>
+    <p class="contact">Get in touch: <a href="mailto:handyroutes@gmail.com">handyroutes@gmail.com</a></p>
   </main>
-
-  <footer class="footer">
-    <p><strong>HandyRoutes</strong> &nbsp;|&nbsp; Cleaning, transportation and maintenance in Cambridge.</p>
-    <p><a href="community.html">Community</a></p>
-  </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
