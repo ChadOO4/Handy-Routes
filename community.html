@@ -7,6 +7,7 @@
   <meta name="description" content="HandyRoutes community work: giving back from Cambridge to the world.">
   <link rel="stylesheet" href="nav.css">
   <link rel="stylesheet" href="community.css">
+  <link rel="stylesheet" href="globe.css">
 </head>
 <body class="community">
 
@@ -20,28 +21,38 @@
     <!-- Hero -->
     <header class="hero">
       <div class="hero-text">
-        <h1>Giving back,<span>to the world</span></h1>
+        <h1>Giving back, <span>to the world</span></h1>
         <p class="tagline">Small steps. Big impact.</p>
         <p class="lead">
           HandyRoutes wants to do more than clean, move and fix. We're building ways to support our neighbours, our city and causes far beyond it.
         </p>
         <div class="btn-row">
-          <a class="btn btn-solid" href="mailto:community@handyroutes.co.uk?subject=Getting%20involved">Get Involved &rarr;</a>
+          <a class="btn btn-solid" href="mailto:together.handyroutes@gmail.com?subject=Getting%20involved">Get Involved &rarr;</a>
           <a class="btn btn-outline" href="#causes">Learn More</a>
         </div>
       </div>
 
-      <div class="globe-wrap" aria-hidden="true">
-        <div class="globe"></div>
-        <span class="pin">Cambridge</span>
-        <span class="pin">Canada</span>
-        <span class="pin">Dubai</span>
+      <!-- Interactive globe (drawn by globe.js) -->
+      <div class="globe-wrap">
+        <canvas id="globe" class="globe-canvas" tabindex="0" role="img"
+                aria-label="Interactive globe of the places HandyRoutes is connected to. Drag to rotate, use the arrow keys to turn it, and plus and minus to zoom."></canvas>
+        <p id="globe-status" class="globe-status" hidden>Loading the globe&hellip;</p>
+
+        <div class="globe-controls" role="group" aria-label="Globe controls">
+          <button id="globe-zoom-out" class="ctrl" type="button" aria-label="Zoom out">&minus;</button>
+          <button id="globe-zoom-in" class="ctrl" type="button" aria-label="Zoom in">+</button>
+          <button id="globe-spin" class="ctrl ctrl-text" type="button" aria-pressed="true">Pause spin</button>
+          <button id="globe-reset" class="ctrl ctrl-text" type="button">Reset</button>
+        </div>
+
+        <div id="globe-chips" class="chips" role="group" aria-label="Places on the globe"></div>
+        <div id="globe-card" class="globe-card" aria-live="polite"></div>
       </div>
     </header>
 
     <!-- Three causes strip -->
     <section class="strip" id="causes" aria-label="Our community work">
-  
+
       <div class="strip-item">
         <span class="badge" aria-hidden="true">🤝</span>
         <div><h2>Helping<br>Neighbourhood</h2></div>
@@ -84,8 +95,13 @@
 
   <footer class="footer">
     <p><strong>HandyRoutes</strong> &nbsp;|&nbsp; One name, every solution.</p>
-    <p><a href="mailto:community@handyroutes.co.uk">together.handyroutes@gmail.com</a></p>
+    <p><a href="mailto:together.handyroutes@gmail.com">together.handyroutes@gmail.com</a></p>
   </footer>
+
+  <!-- Globe libraries (loaded in order), then the globe itself -->
+  <script defer src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script defer src="globe.js"></script>
 
 </body>
 </html>
