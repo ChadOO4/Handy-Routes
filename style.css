@@ -1,10 +1,11 @@
 :root {
   --white: #FFFFFF;
-  --black:#000000;
-  --emerald-green: #50C878;
-  --green-light: #32CD32;
-  --mint-green: #98FF98;
-  --pale-green: #98FB98;
+  --forest: #1e5a2d;
+  --green: #2e7d3f;
+  --leaf: #6fbf5a;
+  --mist: #f3faee;
+  --ink: #12311b;
+  --soft: #3d5a45;
 }
 
 * {
@@ -20,7 +21,7 @@ html {
 body {
   font-family: Georgia, "Times New Roman", serif;
   background: var(--white);
-  color: var(--mint-green);
+  color: var(--ink);
   line-height: 1.7;
   overflow-x: hidden;
 }
@@ -41,8 +42,8 @@ body {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 30% 20%, rgba(152, 201, 90, 0.14), transparent 40%),
-    radial-gradient(circle at 75% 70%, rgba(152, 201, 90, 0.10), transparent 45%);
+    radial-gradient(circle at 30% 20%, rgba(111, 191, 90, 0.20), transparent 42%),
+    radial-gradient(circle at 75% 70%, rgba(46, 125, 63, 0.12), transparent 45%);
   animation: drift 24s ease-in-out infinite alternate;
 }
 
@@ -59,14 +60,14 @@ body {
   text-align: center;
 }
 
-/* Logo: edges fade out so the image blends into the page */
+/* Logo: white areas of the image blend into the page, edges fade out */
 .logo {
   display: block;
   width: 100%;
   max-width: 680px;
   height: auto;
   margin: 0 auto;
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
   -webkit-mask-image:
     linear-gradient(to right, transparent, #000 7%, #000 93%, transparent),
     linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent);
@@ -75,29 +76,24 @@ body {
     linear-gradient(to right, transparent, #000 7%, #000 93%, transparent),
     linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent);
   mask-composite: intersect;
-  animation: breathe 7s ease-in-out infinite alternate;
-}
-
-@keyframes breathe {
-  from { filter: brightness(1); }
-  to { filter: brightness(1.2); }
 }
 
 .status {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.6rem 1.75rem;
-  border: 1px solid var(--emerald-green);
+  border: 1px solid rgba(46, 125, 63, 0.45);
   border-radius: 999px;
-  color: var(--green-light);
+  background: var(--mist);
+  color: var(--green);
   font-size: 1.05rem;
   letter-spacing: 0.04em;
   animation: pulse 3.5s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 rgba(151, 201, 90, 0); }
-  50% { box-shadow: 0 0 22px rgba(152, 201, 90, 0.35); }
+  0%, 100% { box-shadow: 0 0 0 rgba(46, 125, 63, 0); }
+  50% { box-shadow: 0 0 22px rgba(111, 191, 90, 0.45); }
 }
 
 /* Service tiles */
@@ -111,9 +107,10 @@ body {
 .card {
   position: relative;
   padding: 1.75rem 1.5rem 2rem;
-  border: 1px solid rgba(152, 201, 90, 0.3);
+  border: 1px solid rgba(46, 125, 63, 0.22);
   border-radius: 16px;
-  background: linear-gradient(160deg, rgba(152, 201, 90, 0.08), rgba(152, 201, 90, 0.01));
+  background: linear-gradient(160deg, #ffffff, var(--mist));
+  box-shadow: 0 8px 24px rgba(30, 90, 45, 0.07);
   overflow: hidden;
   will-change: transform;
   transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
@@ -124,15 +121,15 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(80, 200, 120, 0.2), transparent 70%);
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(111, 191, 90, 0.22), transparent 70%);
   opacity: 0;
   transition: opacity 0.35s ease;
   pointer-events: none;
 }
 
 .card:hover {
-  border-color: rgba(80, 200, 120, 0.75);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6), 0 0 28px rgba(280, 200, 120, 0.18);
+  border-color: rgba(46, 125, 63, 0.6);
+  box-shadow: 0 18px 40px rgba(30, 90, 45, 0.18), 0 0 28px rgba(111, 191, 90, 0.2);
 }
 
 .card:hover::before {
@@ -144,7 +141,7 @@ body {
   height: 84px;
   width: auto;
   margin: 0 auto 0.75rem;
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
   transition: transform 0.4s ease;
 }
 
@@ -154,7 +151,7 @@ body {
 
 .card h2 {
   position: relative;
-  color: var(--green-light);
+  color: var(--forest);
   font-size: 1.4rem;
   font-weight: normal;
   letter-spacing: 0.05em;
@@ -163,7 +160,7 @@ body {
 
 .card p {
   position: relative;
-  color: var(--black);
+  color: var(--soft);
   max-width: 28ch;
   margin: 0 auto;
 }
@@ -185,21 +182,20 @@ body {
 
 .contact {
   margin-top: 3rem;
-  color: var(--pale-green);
+  color: var(--forest);
 }
 
 a {
-  color: var(--green-light);
+  color: var(--green);
 }
 
 a:focus-visible {
-  outline: 2px solid var(--emerald-green);
+  outline: 2px solid var(--leaf);
   outline-offset: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .glow,
-  .logo,
   .status {
     animation: none;
   }
